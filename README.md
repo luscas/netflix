@@ -1,6 +1,6 @@
 <img  src="https://openconnect.netflix.com/assets/logo.svg?_cchid=4ce4e6669edb5602a6b38f77eca90b8b" width="120" />
 
-Um clone da aplicação Netflix versão web utilizando <code>Next.JS</code> e <code>Tailwindcss</code>
+Um clone da aplicação Netflix versão web utilizando <code>NextJS</code> e <code>Tailwind CSS</code>
 
 ## 🚀 Começando
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
