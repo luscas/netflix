@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import classnames from "classnames";
 import { motion } from "framer-motion";
 
@@ -113,72 +112,90 @@ class Home extends Component {
           <title>Quem está assistindo? - Netflix</title>
         </Head>
 
-        <header className="bg-gradient-to-t from-transparent to-[#010101] w-screen pt-6 px-14">
+        <header className="relative">
+          <div className="pt-5 px-14 flex w-full bg-gradient-to-t from-transparent to-[#010101] fixed top-0 left-0 items-center">
+            <img
+              src="/assets/logo.svg"
+              width={91.5}
+              alt="Netflix"
+              draggable={false}
+            />
+
+            <nav className="mx-12 flex gap-5 items-center">
+              <a href="/" className="text-white text-sm font-bold">
+                Início
+              </a>
+              <a href="#" className="text-white text-sm">
+                Séries
+              </a>
+              <a href="#" className="text-white text-sm">
+                Filmes
+              </a>
+              <a href="#" className="text-white text-sm">
+                Bombando
+              </a>
+              <a href="#" className="text-white text-sm">
+                Minha lista
+              </a>
+            </nav>
+
+            <div className="flex gap-5 ml-auto items-center">
+              <a href="#">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="white"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </a>
+
+              <a href="#">
+                <svg
+                  class="w-6 h-6"
+                  fill="white"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+                </svg>
+              </a>
+
+              <a href="#" className="grid grid-cols-2 items-center">
+                <img
+                  src="https://occ-0-2117-3851.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABUPhM-UyfiyQNO78P7qKa4zmgl_gBdVDOo1NDU47ABQPO57nd4ClG1_NSAvk_nADMKQmci5awneAKIx2AqY2nA4RAR-h.png?r=6c5"
+                  className="w-8 h-8 rounded"
+                  alt="Avatar de Bolsonaro"
+                />
+
+                <svg
+                  class="w-4 h-4 ml-2"
+                  fill="white"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
           <img
-            src="/assets/logo.svg"
-            width={91.5}
-            alt="Netflix"
-            draggable={false}
+            src="https://occ-0-2117-3851.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABUOm-6XJRaDmfHDRRtuk-oxHQ2DrbehUQIZh8VnvufZzWhSP9Q04z7emj4J_w8mbEgHti4VbD1NF1In2swxnWrY8TOHH.webp?r=50e"
+            className="w-screen"
           />
         </header>
-
-        <motion.div
-          variants={variants}
-          initial="hidden"
-          animate="show"
-          className="flex flex-1 flex-col items-center justify-center"
-        >
-          <div className="text-[3.5vw] text-white">Quem está assistindo?</div>
-          <div className="flex gap-8 mt-10">
-            {avatars.map((item, index) => (
-              <Link href="/browse" key={index}>
-                <a className="flex flex-col max-w-[10vw] group">
-                  <img
-                    className={classnames(
-                      "bg-cover bg-no-repeat w-[10vw] h-[10vw] rounded-lg border-2",
-                      {
-                        "border-white": isSelected === index,
-                        "border-transparent": (isSelected === index) == false,
-                      }
-                    )}
-                    src={item.avatar}
-                  />
-                  <div
-                    className={classnames(
-                      "text-[1.3vw] text-[grey] text-center py-2 group-hover:text-white"
-                    )}
-                  >
-                    {item.name}
-                  </div>
-                  {item.isLocked && (
-                    <div className="pointer-events-none mx-auto mt-2">
-                      <svg
-                        class="w-6 h-6"
-                        fill="none"
-                        stroke="grey"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                        ></path>
-                      </svg>
-                    </div>
-                  )}
-                </a>
-              </Link>
-            ))}
-          </div>
-          <button
-            type="button"
-            className="bg-none text-[1.2vw] text-[grey] border border-[grey] cursor-pointer py-2 px-6 mt-12 hover:text-white hover:border-white tracking-widest"
-          >
-            GERENCIAR PERFIS
-          </button>
-        </motion.div>
       </div>
     );
   }
