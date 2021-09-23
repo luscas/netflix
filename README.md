@@ -1,34 +1,102 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+  <img  src="https://openconnect.netflix.com/assets/logo.svg?_cchid=4ce4e6669edb5602a6b38f77eca90b8b" width="120" />
 
-First, run the development server:
+Um clone da aplicação Netflix versão web utilizando <code>Next.JS</code> e <code>Tailwindcss</code>
 
-```bash
-npm run dev
-# or
-yarn dev
+  
+  
+  
+
+## 🚀 Começando
+
+  
+  
+  
+
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+
+  
+  
+
+### 🔧 Instalação
+
+  
+  
+  
+
+Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
+
+  
+  
+  
+
+É necessário que você instale todas as dependências do projeto
+
+```zsh
+
+$ npm install
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A próxima etapa é iniciar o projeto
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```zsh
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+$ npm run dev
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
 
-## Learn More
+## ⚙️ Executando a aplicação
 
-To learn more about Next.js, take a look at the following resources:
+  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Após a instalação, você deve entrar no link https://localhost:3000/ para visualizar a aplicação.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### :page_with_curl: Rotas de navegação
 
-## Deploy on Vercel
+|Endereço|Descrição|
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+|--|--|
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| / | Selecione um perfil |
+
+| /browse | Selecione um filme |
+
+  
+
+## 🛠️ Construído com
+
+  
+
+*  [NodeJS](https://nodejs.org/en/docs/) - Ambiente de execução JavaScript
+
+  
+
+*  [NextJS](https://nextjs.org/docs) - Framework web
+
+  
+
+*  [Tailwind CSS](https://tailwindcss.com/docs) - Framework para estilização
+
+  
+  
+
+## :iphone: Redes sociais
+
+  
+
+*  [Twitter](https://twitter.com/lucasreservinha)
+
+  
+
+*  [Linkedin](https://www.linkedin.com/in/lucaswcg/)
+
+* Ethereum Wallet: **0x1ad31a923af5ba1a6fdf3c180679cfa1ecd3f9d1**
+
+  
+
+---
+
+  
+
+⌨️ com ❤️ por [Lucas Paz](https://github.com/luscas) 👨‍💻
