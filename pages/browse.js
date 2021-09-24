@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import classnames from "classnames";
 
 class Browse extends Component {
@@ -50,15 +51,16 @@ class Browse extends Component {
               }
             )}
           >
-            <img
+            <Image
               src="/assets/logo.svg"
               width={91.5}
+              height={25}
               alt="Netflix"
               draggable={false}
             />
 
             <nav className="mx-12 flex gap-5 items-center">
-              <a href="/" className="text-white text-sm font-bold">
+              <a href="#" className="text-white text-sm font-bold">
                 Início
               </a>
               <a href="#" className="text-white text-sm">
@@ -78,16 +80,16 @@ class Browse extends Component {
             <div className="flex gap-5 ml-auto items-center">
               <a href="#">
                 <svg
-                  class="w-6 h-6"
+                  className="w-6 h-6"
                   fill="none"
                   stroke="white"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   ></path>
                 </svg>
@@ -95,7 +97,7 @@ class Browse extends Component {
 
               <a href="#">
                 <svg
-                  class="w-6 h-6"
+                  className="w-6 h-6"
                   fill="white"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,22 +107,24 @@ class Browse extends Component {
               </a>
 
               <a href="#" className="grid grid-cols-2 items-center">
-                <img
+                <Image
                   src="https://occ-0-2117-3851.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABUPhM-UyfiyQNO78P7qKa4zmgl_gBdVDOo1NDU47ABQPO57nd4ClG1_NSAvk_nADMKQmci5awneAKIx2AqY2nA4RAR-h.png?r=6c5"
+                  width={32}
+                  height={32}
                   className="w-8 h-8 rounded"
                   alt="Avatar de Bolsonaro"
                 />
 
                 <svg
-                  class="w-4 h-4 ml-2"
+                  className="w-4 h-4 ml-2"
                   fill="white"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </a>
@@ -136,10 +140,12 @@ class Browse extends Component {
           >
             <div className="bg-gradient-special h-full w-screen flex flex-col justify-center items-start px-14">
               <div className="w-2/4">
-                <img
+                <Image
                   src="https://occ-0-2117-3851.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABXCI6Ld1Ih0yst68tXVtRoaYH9sOvRfHyzkmatrNw5cCHLXFOT78It50SpaJiY4K3WZx8pw9UWqytqVuM5MmEMlH8VxDdj7MNV4NMzSaHuEZ8Sa2BJwrlCng_RYU3U0P232snbtGNtQuLow9xnFY9VWDRGON8LCM4k20PqQkPu0X0w.webp?r=937"
-                  alt=""
+                  width={650}
+                  height={260}
                   className="flex-grow-0"
+                  alt="Serie Logo"
                 />
                 <div className="font-bold text-[1.6vw] text-white pt-6 pb-2 text-shadow">
                   A coisa está quente: episódios finais na quarta-feira
@@ -195,8 +201,10 @@ class Browse extends Component {
           </div>
           <div className="flex gap-2">
             {movies.map((item, key) => (
-              <div
-                className="w-1/6 h-36 rounded bg-cover shadow-lg transform transition relative cursor-pointer hover:box-shadow hover:z-10 hover:scale-125"
+              <a
+                key={key}
+                href={`/filme/${Math.ceil(Math.random() * 100)}`}
+                className="w-1/6 h-36 rounded bg-cover shadow-lg transform transition relative cursor-pointer focus:scale-125 focus:box-shadow focus:z-10 hover:box-shadow hover:z-10 hover:scale-125"
                 style={{
                   backgroundImage: `url(${item})`,
                 }}
@@ -211,8 +219,10 @@ class Browse extends Component {
           </div>
           <div className="flex gap-2">
             {movies.map((item, key) => (
-              <div
-                className="w-1/6 h-36 rounded bg-cover shadow-lg transform transition relative cursor-pointer hover:box-shadow hover:z-10 hover:scale-125"
+              <a
+                key={key}
+                href={`/filme/${Math.ceil(Math.random() * 100)}`}
+                className="w-1/6 h-36 rounded bg-cover shadow-lg transform transition relative cursor-pointer focus:scale-125 focus:box-shadow focus:z-10 hover:box-shadow hover:z-10 hover:scale-125"
                 style={{
                   backgroundImage: `url(${item})`,
                 }}
@@ -227,8 +237,10 @@ class Browse extends Component {
           </div>
           <div className="flex gap-2">
             {movies.map((item, key) => (
-              <div
-                className="w-1/6 h-36 rounded bg-cover shadow-lg transform transition relative cursor-pointer hover:box-shadow hover:z-10 hover:scale-125"
+              <a
+                key={key}
+                href={`/filme/${Math.ceil(Math.random() * 100)}`}
+                className="w-1/6 h-36 rounded bg-cover shadow-lg transform transition relative cursor-pointer focus:scale-125 focus:box-shadow focus:z-10 hover:box-shadow hover:z-10 hover:scale-125"
                 style={{
                   backgroundImage: `url(${item})`,
                 }}
@@ -243,8 +255,10 @@ class Browse extends Component {
           </div>
           <div className="flex gap-2">
             {movies.map((item, key) => (
-              <div
-                className="w-1/6 h-36 rounded bg-cover shadow-lg transform transition relative cursor-pointer hover:box-shadow hover:z-10 hover:scale-125"
+              <a
+                key={key}
+                href={`/filme/${Math.ceil(Math.random() * 100)}`}
+                className="w-1/6 h-36 rounded bg-cover shadow-lg transform transition relative cursor-pointer focus:scale-125 focus:box-shadow focus:z-10 hover:box-shadow hover:z-10 hover:scale-125"
                 style={{
                   backgroundImage: `url(${item})`,
                 }}
@@ -334,6 +348,7 @@ class Browse extends Component {
           <button
             type="button"
             className="my-5 p-2 text-[grey] text-xs border border-[grey] hover:border-white hover:text-white"
+            tabIndex="-1"
           >
             Código do serviço
           </button>

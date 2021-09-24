@@ -9,7 +9,6 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      isSelected: 0,
       avatars: [
         {
           avatar:
@@ -41,60 +40,8 @@ class Home extends Component {
     };
   }
 
-  componentDidMount() {
-    document.onkeydown = (e) => {
-      e = e || window.event;
-
-      if (
-        e.code == "ArrowRight" &&
-        this.state.isSelected <= this.state.avatars.length - 1
-      ) {
-        if (this.state.isSelected === this.state.avatars.length - 1) {
-          this.setState({
-            isSelected: 0,
-          });
-          return false;
-        }
-
-        this.setState({
-          isSelected: this.state.isSelected + 1,
-        });
-      }
-
-      if (e.code == "ArrowLeft") {
-        if (this.state.isSelected == 0) {
-          this.setState({
-            isSelected: this.state.avatars.length - 1,
-          });
-          return false;
-        }
-
-        this.setState({
-          isSelected: this.state.isSelected - 1,
-        });
-      }
-
-      if (e.code == "Enter") {
-        if (this.state.avatars[this.state.isSelected].isLocked) {
-          prompt(
-            `Insira a senha do perfil ${
-              this.state.avatars[this.state.isSelected].name
-            }`
-          );
-          return false;
-        }
-
-        alert(
-          `Selecionou o perfil: ${
-            this.state.avatars[this.state.isSelected].name
-          }`
-        );
-      }
-    };
-  }
-
   render() {
-    const { avatars, isSelected } = this.state;
+    const { avatars } = this.state;
 
     const variants = {
       hidden: { scale: 1.2, opacity: 0 },
@@ -117,6 +64,7 @@ class Home extends Component {
           <img
             src="/assets/logo.svg"
             width={91.5}
+            height={25}
             alt="Netflix"
             draggable={false}
           />
@@ -134,14 +82,9 @@ class Home extends Component {
               <Link href="/browse" key={index}>
                 <a className="flex flex-col max-w-[10vw] group">
                   <img
-                    className={classnames(
-                      "bg-cover bg-no-repeat w-[10vw] h-[10vw] rounded-lg border-2",
-                      {
-                        "border-white": isSelected === index,
-                        "border-transparent": (isSelected === index) == false,
-                      }
-                    )}
+                    className="bg-cover bg-no-repeat w-[10vw] h-[10vw] rounded-lg border-2 border-transparent focus:border-white outline-none focus:outline-white"
                     src={item.avatar}
+                    alt="Avatar"
                   />
                   <div
                     className={classnames(
@@ -153,16 +96,16 @@ class Home extends Component {
                   {item.isLocked && (
                     <div className="pointer-events-none mx-auto mt-2">
                       <svg
-                        class="w-6 h-6"
+                        className="w-6 h-6"
                         fill="none"
                         stroke="grey"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
                         ></path>
                       </svg>
@@ -175,6 +118,7 @@ class Home extends Component {
           <button
             type="button"
             className="bg-none text-[1.2vw] text-[grey] border border-[grey] cursor-pointer py-2 px-6 mt-12 hover:text-white hover:border-white tracking-widest"
+            tabIndex="-1"
           >
             GERENCIAR PERFIS
           </button>
