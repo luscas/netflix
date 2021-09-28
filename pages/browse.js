@@ -132,13 +132,13 @@ class Browse extends Component {
           </div>
 
           <div
-            className="w-screen h-screen bg-[#141414] pb-30 bg-top bg-cover"
+            className="w-full h-screen bg-[#141414] pb-30 bg-top bg-cover"
             style={{
               backgroundImage:
                 "url(https://occ-0-2117-3851.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABXPBep0fDjV7DWC0ApiZDxZCp_6U1SvvXXTBDw5rQBhh7HEP7-0QnEoGp6lbu_8Vdatr_hnxFphZ5TrT2J3HCpDCTmkX.webp?r=182)",
             }}
           >
-            <div className="bg-gradient-special h-full w-screen flex flex-col justify-center items-start px-14">
+            <div className="bg-gradient-special h-full w-full flex flex-col justify-center items-start px-14">
               <div className="w-2/4">
                 <Image
                   src="https://occ-0-2117-3851.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABXCI6Ld1Ih0yst68tXVtRoaYH9sOvRfHyzkmatrNw5cCHLXFOT78It50SpaJiY4K3WZx8pw9UWqytqVuM5MmEMlH8VxDdj7MNV4NMzSaHuEZ8Sa2BJwrlCng_RYU3U0P232snbtGNtQuLow9xnFY9VWDRGON8LCM4k20PqQkPu0X0w.webp?r=937"
